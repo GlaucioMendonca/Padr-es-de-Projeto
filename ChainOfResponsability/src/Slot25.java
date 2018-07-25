@@ -5,11 +5,17 @@ public class Slot25 extends SlotChain{
 		super(id);
 		
 	}
-
+	
 	@Override
-	public void efetuarCompra(SlotID... valores) {
-		// TODO Auto-generated method stub
-		
+	public Double efetuarCompra(SlotID valores) {
+		if (valores.toString().equals("slot1")) {
+			return new Double(1.00);
+		}
+		else if(next!= null){
+			return next.efetuarCompra(valores);
+		}
+		next = new Slot05(SlotID.slot50);
+		return next.efetuarCompra(valores);
 	}
 
 }

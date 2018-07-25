@@ -1,14 +1,10 @@
-import java.util.ArrayList;
-
 public abstract class SlotChain {
 	protected SlotChain next;
-	protected SlotID identificadorSlot;
-	private Double valorCompra;
+	protected SlotID identificador;
 	
 	public SlotChain (SlotID id) {
 		next = null;
-		identificadorSlot = id;
-		
+		identificador = id;
 	}
 	
 	public void setNext (SlotChain slot) {
@@ -19,15 +15,7 @@ public abstract class SlotChain {
 		}
 		
 	}
-	
-	public Double getValorCompra() {
-		return valorCompra;
-	}
 
-	public void setValorCompra(Double valorCompra) {
-		this.valorCompra = valorCompra;
-	}
-
-	public abstract void efetuarCompra (ArrayList<SlotID> valores);
+	public abstract Double efetuarCompra (SlotID valores);
 	
 }
